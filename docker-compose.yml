@@ -1,0 +1,11 @@
+version: '2'
+services:
+  rsyslog-server:
+    image: rsyslog
+    ports: 
+      - "6514:6514"
+      - "514:514/udp"
+    volumes:
+      - ./etc/rsyslog.conf:/etc/rsyslog.conf
+      - ./etc/rsyslog.d:/etc/rsyslog.d
+      - /data/logs:/var/log
